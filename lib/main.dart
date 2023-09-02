@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:simple_notes_app/views/note_list_screen.dart';
 
 void main() async {
   // init the hive
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'IBMPlex',
         brightness: Brightness.dark,
       ),
-      home: Scaffold(),
+      home: NoteListScreen(),
     );
   }
 }
