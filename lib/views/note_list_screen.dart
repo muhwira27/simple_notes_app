@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_notes_app/widgets/note_tile.dart';
 
 class NoteListScreen extends StatelessWidget {
   @override
@@ -21,9 +22,13 @@ class NoteListScreen extends StatelessWidget {
         child: Stack(
           children: [
             ListView.builder(
-              itemCount: 1,
+              itemCount: 10,
               itemBuilder: (context, index) {
-                return Container();
+                return NoteTile(
+                  title: 'Title',
+                  description: 'Description',
+                  date: '12 September 21.00',
+                );
               },
             ),
             Positioned(
