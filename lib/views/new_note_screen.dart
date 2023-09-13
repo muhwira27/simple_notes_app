@@ -5,11 +5,15 @@ import 'package:simple_notes_app/controllers/notes_controllers.dart';
 class NewNoteScreen extends StatelessWidget {
   final titleController;
   final descriptionController;
+  final bool? onEdit;
+  final int? editIndex;
 
   NewNoteScreen({
     super.key,
     required this.titleController,
     required this.descriptionController,
+    this.onEdit,
+    this.editIndex,
   });
 
   @override
@@ -25,10 +29,18 @@ class NewNoteScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 8.0),
             child: IconButton(
               onPressed: () {
-                notessController.saveNewNote(
-                  titleController.text,
-                  descriptionController.text,
-                );
+                if (onEdit!) {
+                  notessController.editNote(
+                    editIndex!,
+                    titleController.text,
+                    descriptionController.text,
+                  );
+                } else {
+                  notessController.saveNewNote(
+                    titleController.text,
+                    descriptionController.text,
+                  );
+                }
                 Get.back();
               },
               icon: Icon(

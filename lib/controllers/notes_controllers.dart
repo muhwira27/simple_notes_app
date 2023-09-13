@@ -35,6 +35,17 @@ class NotesController extends GetxController {
     }
   }
 
+  void editNote(int index, String title, String description) {
+    if (index >= 0 && index < noteList.length) {
+      noteList[index] = [
+        title,
+        description,
+        dateFormat.format(DateTime.now()),
+      ];
+      updateData();
+    }
+  }
+
   @override
   void onClose() {
     updateData();

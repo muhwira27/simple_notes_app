@@ -35,6 +35,7 @@ class NoteListScreen extends StatelessWidget {
                     title: note[0],
                     description: note[1],
                     date: note[2],
+                    editIndex: index,
                   );
                 },
               ),
@@ -48,6 +49,7 @@ class NoteListScreen extends StatelessWidget {
                     () => NewNoteScreen(
                       titleController: TextEditingController(),
                       descriptionController: TextEditingController(),
+                      onEdit: false,
                     ),
                   );
                 },
