@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:get/get.dart';
+import 'package:simple_notes_app/controllers/notes_controllers.dart';
 
 class NewNoteScreen extends StatelessWidget {
   final titleController;
@@ -13,8 +14,7 @@ class NewNoteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DateFormat dateFormat = DateFormat();
-    dateFormat = DateFormat('d MMMM HH:mm');
+    final NotesController notessController = Get.find();
 
     return Scaffold(
       backgroundColor: Colors.black54,
@@ -25,6 +25,10 @@ class NewNoteScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 8.0),
             child: IconButton(
               onPressed: () {
+                notessController.saveNewNote(
+                  titleController.text,
+                  descriptionController.text,
+                );
                 Navigator.pop(context);
               },
               icon: Icon(
@@ -66,7 +70,7 @@ class NewNoteScreen extends StatelessWidget {
               alignment: Alignment.topLeft,
               height: 20,
               child: Text(
-                dateFormat.format(DateTime.now()),
+                notessController.dateFormat.format(DateTime.now()),
                 style: TextStyle(
                   color: Colors.white54,
                   fontSize: 13,
