@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_notes_app/views/new_note_screen.dart';
 import 'package:simple_notes_app/widgets/note_tile.dart';
 
 class NoteListScreen extends StatelessWidget {
@@ -35,7 +36,18 @@ class NoteListScreen extends StatelessWidget {
               bottom: 50,
               right: 12,
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NewNoteScreen(
+                        titleController: TextEditingController(),
+                        descriptionController: TextEditingController(),
+                      ),
+                    ),
+                    (route) => true,
+                  );
+                },
                 backgroundColor: Colors.deepOrange,
                 child: Icon(
                   Icons.add,
