@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:simple_notes_app/controllers/notes_controllers.dart';
 import 'package:simple_notes_app/views/new_note_screen.dart';
 import 'package:simple_notes_app/widgets/note_tile.dart';
 
 class NoteListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final NotesController notessController = Get.put(NotesController());
+
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
@@ -22,15 +26,18 @@ class NoteListScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
         child: Stack(
           children: [
-            ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return NoteTile(
-                  title: 'Title',
-                  description: 'Description',
-                  date: '12 September 21.00',
-                );
-              },
+            Obx(
+              () => ListView.builder(
+                itemCount: notessController.noteList.length,
+                itemBuilder: (context, index) {
+                  final note = notessController.noteList[index];
+                  return NoteTile(
+                    title: note[0],
+                    description: note[1],
+                    date: note[2],
+                  );
+                },
+              ),
             ),
             Positioned(
               bottom: 50,
