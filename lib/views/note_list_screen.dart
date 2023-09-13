@@ -44,15 +44,11 @@ class NoteListScreen extends StatelessWidget {
               right: 12,
               child: FloatingActionButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NewNoteScreen(
-                        titleController: TextEditingController(),
-                        descriptionController: TextEditingController(),
-                      ),
+                  Get.to(
+                    () => NewNoteScreen(
+                      titleController: TextEditingController(),
+                      descriptionController: TextEditingController(),
                     ),
-                    (route) => true,
                   );
                 },
                 backgroundColor: Colors.deepOrange,

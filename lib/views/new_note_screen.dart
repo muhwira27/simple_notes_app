@@ -29,7 +29,7 @@ class NewNoteScreen extends StatelessWidget {
                   titleController.text,
                   descriptionController.text,
                 );
-                Navigator.pop(context);
+                Get.back();
               },
               icon: Icon(
                 Icons.check,
