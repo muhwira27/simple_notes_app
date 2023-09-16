@@ -6,6 +6,8 @@ import 'package:intl/intl.dart';
 class NotesController extends GetxController {
   final _notesBox = Hive.box('notesBox');
   var noteList = [].obs;
+  var selectedNotes = <int>[].obs;
+  var isLongPress = false.obs;
   DateFormat dateFormat = DateFormat();
 
   @override
@@ -44,6 +46,35 @@ class NotesController extends GetxController {
       ];
       updateData();
     }
+  }
+
+  void onLongPress() {
+    isLongPress.value = true;
+  }
+
+  void onCloseCheck() {
+    isLongPress.value = false;
+    selectedNotes.clear();
+  }
+
+  void onSelectNote(bool? value, int index) {
+    if (value!) {
+      selectedNotes.add(index);
+    } else {
+      selectedNotes.remove(index);
+    }
+  }
+
+  void deleteSelectedNotes() {
+    selectedNotes.sort((a, b) => b.compareTo(a));
+    for (var index in selectedNotes) {
+      if (index >= 0 && index < noteList.length) {
+        noteList.removeAt(index);
+      }
+    }
+    updateData();
+    selectedNotes.clear();
+    isLongPress.value = false;
   }
 
   @override

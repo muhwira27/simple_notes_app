@@ -21,6 +21,26 @@ class NoteListScreen extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
+        leading: Obx(
+          () => notessController.isLongPress.value
+              ? IconButton(
+                  onPressed: notessController.onCloseCheck,
+                  icon: Icon(Icons.close),
+                  iconSize: 30,
+                )
+              : Container(),
+        ),
+        actions: [
+          Obx(
+            () => notessController.isLongPress.value
+                ? IconButton(
+                    onPressed: notessController.deleteSelectedNotes,
+                    icon: Icon(Icons.delete),
+                    iconSize: 30,
+                  )
+                : Container(),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
