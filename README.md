@@ -31,7 +31,13 @@ A User-Friendly Note-Taking App to Keep Your Thoughts Organized!
 git clone https://github.com/muhwira27/simple_notes_app.git
 ```
 
-3. Run the app with Android Studio or VS Code. Or the command line:
+3. Change directory to simple_notes_app folder
+
+```
+cd simple_notes_app
+```
+
+4. Run the app with Android Studio or VS Code. Or the command line:
 
 ```
 flutter pub get
