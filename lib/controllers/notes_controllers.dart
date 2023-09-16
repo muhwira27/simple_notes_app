@@ -8,6 +8,8 @@ class NotesController extends GetxController {
   var noteList = [].obs;
   var selectedNotes = <int>[].obs;
   var isLongPress = false.obs;
+  var ascending = true.obs;
+  var idxSort = 2.obs;
   DateFormat dateFormat = DateFormat();
 
   @override
@@ -75,6 +77,33 @@ class NotesController extends GetxController {
     updateData();
     selectedNotes.clear();
     isLongPress.value = false;
+  }
+
+  void ascDesc() {
+    ascending.value = !ascending.value;
+
+    if (idxSort.value == 0) {
+      noteList.sort((a, b) {
+        String titleA = a[idxSort.value].toString().toLowerCase();
+        String titleB = b[idxSort.value].toString().toLowerCase();
+        return ascending.value
+            ? titleA.compareTo(titleB)
+            : titleB.compareTo(titleA);
+      });
+    } else {
+      noteList.sort((a, b) => ascending.value
+          ? a[idxSort.value].compareTo(b[idxSort.value])
+          : b[idxSort.value].compareTo(a[idxSort.value]));
+    }
+  }
+
+  void sortBy(String value) {
+    if (value == 'title') {
+      idxSort.value = 0;
+    } else if (value == 'date') {
+      idxSort.value = 2;
+    }
+    ascDesc();
   }
 
   @override

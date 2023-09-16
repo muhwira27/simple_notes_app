@@ -38,7 +38,43 @@ class NoteListScreen extends StatelessWidget {
                     icon: Icon(Icons.delete),
                     iconSize: 30,
                   )
-                : Container(),
+                : Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(notessController.ascending.value
+                            ? Icons.arrow_upward
+                            : Icons.arrow_downward),
+                        onPressed: notessController.ascDesc,
+                      ),
+                      PopupMenuButton<String>(
+                        shadowColor: Colors.black,
+                        icon: Icon(Icons.sort_rounded),
+                        iconSize: 30,
+                        offset: Offset(0.0, AppBar().preferredSize.height),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                        onSelected: (value) {
+                          notessController.sortBy(value);
+                        },
+                        itemBuilder: (context) => [
+                          PopupMenuItem(
+                            enabled: false,
+                            child: Text(
+                              'Sort by',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                          PopupMenuItem(value: 'title', child: Text('Title')),
+                          PopupMenuItem(value: 'date', child: Text('Date')),
+                        ],
+                      )
+                    ],
+                  ),
           ),
         ],
       ),
