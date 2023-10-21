@@ -21,9 +21,9 @@ class NewNoteScreen extends StatelessWidget {
     final NotesController notessController = Get.find();
 
     return Scaffold(
-      backgroundColor: Colors.black54,
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black54,
+        backgroundColor: Colors.black,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),

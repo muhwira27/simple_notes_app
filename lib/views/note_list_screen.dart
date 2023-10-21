@@ -10,7 +10,7 @@ class NoteListScreen extends StatelessWidget {
     final NotesController notessController = Get.put(NotesController());
 
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(
           "N O T E S",
