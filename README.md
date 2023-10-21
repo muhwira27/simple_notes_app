@@ -4,6 +4,10 @@ A User-Friendly Note-Taking App to Keep Your Thoughts Organized!
 
 [![made-with-flutter](https://img.shields.io/badge/Made%20with-Flutter-1f425f.svg)](https://flutter.dev/)
 
+## Live Demo
+
+[Simple Notes App](https://simple-notes-nx.netlify.app/)
+
 ## Download
 
  -
