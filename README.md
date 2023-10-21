@@ -19,7 +19,7 @@ A User-Friendly Note-Taking App to Keep Your Thoughts Organized!
 
 ## Screenshots
 
-<img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_1.png" width="32%"> <img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_2.png" width="32%"> <img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_3.png" width="32%"> <img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_4.png" width="32%">
+<img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_1.png" width="32%"> <img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_2.png" width="32%"> <img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_3.png" width="32%"> <img src="https://github.com/muhwira27/simple_notes_app/blob/5b164db91f06ba0e409eb163ba72b37810116881/screenshots/Screenshot_4.png" width="32%"> <img src="https://github.com/muhwira27/simple_notes_app/blob/1ed1c3aa2b971b6988038c4ce843c8ea706d52c6/screenshots/Screenshot_5.png" width="32%">
 
 
 ## Building from Source
@@ -31,7 +31,13 @@ A User-Friendly Note-Taking App to Keep Your Thoughts Organized!
 git clone https://github.com/muhwira27/simple_notes_app.git
 ```
 
-3. Run the app with Android Studio or VS Code. Or the command line:
+3. Change directory to simple_notes_app folder
+
+```
+cd simple_notes_app
+```
+
+4. Run the app with Android Studio or VS Code. Or the command line:
 
 ```
 flutter pub get
